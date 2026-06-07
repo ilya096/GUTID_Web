@@ -4,6 +4,7 @@ import { InfoPanel } from './InfoPanel';
 import { useInteractionStore } from '../stores/interactionStore';
 import { Poster } from './Poster';
 import { usePosterStore } from '../stores/posterStore';
+import { OrbitControls } from '@react-three/drei';
 
 function Exhibit({ position, id }: { position: [number, number, number], id: string }) {
   const { setActiveExhibit } = useInteractionStore();
@@ -26,6 +27,7 @@ export const HallEnvironment: React.FC = () => {
     <>
       <Canvas camera={{ position: [0, 1.6, 5] }} style={{ width: '100%', height: '100%' }}>
         <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
         <pointLight position={[10, 10, 10]} />
         <Exhibit position={[0, 0.5, 0]} id='exhibit-1' />
         <Exhibit position={[-2, 0.5, 0]} id='exhibit-2' />
@@ -39,6 +41,7 @@ export const HallEnvironment: React.FC = () => {
             texturePath={poster.texturePath}
           />
         ))}
+        <OrbitControls />
       </Canvas>
       <InfoPanel />
     </>

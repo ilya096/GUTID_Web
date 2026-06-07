@@ -1,12 +1,14 @@
 name: Deploy to GitHub Pages
 on:
   push:
-    branches: [ pickle-gear, gh-pages ]
+    branches: [ pickle-gear ]
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: pickle-gear
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -14,5 +16,6 @@ jobs:
       - run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: \${{ secrets.GITHUB_TOKEN }}\
           publish_dir: ./dist
+          keep_files: false

@@ -1,14 +1,14 @@
 {
   "last_feature": "poster_display",
   "completed_steps": ["passport", "business_context", "positioning", "context_systems", "mechanics", "formulas", "acceptance", "risks", "roadmap"],
-  "next_task": "free_explore",
-  "current_branch": "pickle-gear",
+  "next_task": "poster_display",
+  "current_branch": "grape-duckling",
   "last_updated": "2026-06-08T01:10:00+03:00",
   "features_queue": [
     {"id": "hall_environment", "status": "completed"},
-    {"id": "free_explore", "status": "in_progress"},
+    {"id": "free_explore", "status": "ready_for_test"},
     {"id": "object_interaction", "status": "ready_for_merge"},
-    {"id": "poster_display", "status": "ready_for_test"},
+    {"id": "poster_display", "status": "in_progress"},
     {"id": "audio_guide", "status": "pending"}
   ],
   "tech_stack": {
